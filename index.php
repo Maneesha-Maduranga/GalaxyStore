@@ -12,9 +12,9 @@ mysqli_free_result($result);
 
 ?>
 
-<?php include './Temp/header.php' ?>
 
 <!-- Logout the User -->
+<?php include './Temp/header.php' ?>
 <?php
 
 if (isset($_POST['Logout'])) {
@@ -23,12 +23,9 @@ if (isset($_POST['Logout'])) {
   die();
 }
 
-
 ?>
 
 <div class="grid md:px-8 py-2 md:grid-cols-5 gap-2">
-
-
 
   <?php foreach ($item as $oneItem): ?>
 
