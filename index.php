@@ -3,9 +3,6 @@
 <?php
 
 //To Load The Store Item 
-  
-
-
 $sql = "SELECT id,name,price,quantity,discount FROM item";
 
 $result = mysqli_query($conn, $sql);
@@ -16,26 +13,23 @@ mysqli_free_result($result);
 
 ?>
 
-
-
-
-
-
 <?php include './Temp/header.php' ?>
 
 <!-- Logout the User -->
-<?php 
+<?php
 
-  if(isset($_POST['Logout'])){
-    session_unset();
-  }
+if (isset($_POST['Logout'])) {
+  session_unset();
+  header("Location: index.php");
+  die();
+}
 
 
 ?>
 
 <div class="grid md:px-8 py-2 md:grid-cols-5 gap-2">
 
- 
+
 
   <?php foreach ($item as $oneItem): ?>
 
@@ -71,11 +65,7 @@ mysqli_free_result($result);
     </form>
     <?php endforeach; ?>
 
-    
+
 </div>
-
-
-
-
 
 <?php include './Temp/footer.php' ?>

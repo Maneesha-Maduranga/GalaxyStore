@@ -53,7 +53,7 @@ if (isset($_SESSION["username"])) {
         <div class="px-2">
           <h3 >
             <?php
-              if($name){
+              if(!(isset($_SESSION["Logout"]))){
                 echo "Welcome ".$name;
               }
               else{

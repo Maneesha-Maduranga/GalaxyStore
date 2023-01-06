@@ -4,23 +4,14 @@
 
 <?php
 
-
-
-
 if (isset($_SESSION['username'])) {
     if (isset($_POST['id'])) {
         $item_id = htmlspecialchars($_POST['id']);
         $name = $_POST['Name'];
         $price = $_POST['Price'];
         $discount = $_POST['Discount'];
-        $quantity = $_POST['quantity'];
+        $quantity = $_POST['quantity'] == ""? 1 : $_POST["quantity"];
         $userid = $_SESSION["id"];
-
-
-        
-
-        
-
 
         $addToCartSql = "INSERT INTO cart (item_id,name,price,quantity,discount,user_id) VALUES ('$item_id','$name','$price','$quantity','$discount','$userid')";
 
