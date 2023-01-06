@@ -14,12 +14,21 @@ mysqli_free_result($result);
 
 
 <!-- Logout the User -->
-<?php include './Temp/header.php' ?>
+<?php
+if (isset($_SESSION['usertype'])) {
+  if (($_SESSION["usertype"] == "admin")) {
+    include "./Backend/Header.php";
+  }
+}
+else {
+    include './Temp/header.php';
+}
+?>
 <?php
 
 if (isset($_POST['Logout'])) {
   session_unset();
-  header("Location: index.php");
+  header("Location: /Shop/login.php");
   die();
 }
 

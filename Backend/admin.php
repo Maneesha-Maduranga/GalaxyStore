@@ -22,7 +22,7 @@ mysqli_free_result($result);
   //Logout Logic
   if(isset($_POST['logout'])){
     session_unset();
-  
+    header('Location: /Shop/login.php');
   }
 
 ?> 
@@ -33,7 +33,7 @@ mysqli_free_result($result);
 //For The Item Delete from the Database
 if (isset($_POST['Remove'])) {
 
-  echo '<script>alert("Are Your Shuwar")</script>';
+  echo '<script>alert("Are You Sure")</script>';
 
   $id = htmlspecialchars($_GET['id']);
 
