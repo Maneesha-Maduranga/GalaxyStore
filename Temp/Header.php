@@ -23,6 +23,7 @@ if (isset($_SESSION["username"])) {
   <title>GalaxyStore</title>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@2.43.2/dist/full.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdn.tailgrids.com/tailgrids-fallback.css" />
 </head>
 
 
@@ -47,7 +48,7 @@ if (isset($_SESSION["username"])) {
               <a href="">Orders</a>
             </li>
             <li class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
-              <a href="">Contact</a>
+              <a href="/Shop/contact.php">Contact</a>
             </li>
         </ul>
     </nav>

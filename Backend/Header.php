@@ -30,7 +30,7 @@ if ($_SESSION['usertype'] != 'admin') {
 
 
 <body>
-  <div class="flex flex-col justify-between h-screen">
+<div class="flex flex-col h-screen justify-between">
 <header class="header sticky top-0 bg-white shadow-md flex items-center justify-between px-8 py-02 mb-6">
     <!-- logo -->
     <h1 class="w-3/12">
@@ -44,7 +44,10 @@ if ($_SESSION['usertype'] != 'admin') {
     <nav class="nav font-semibold text-lg">
         <ul class="flex items-center">
             <li class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer active">
-              <a href="/Shop/index.php">Home</a>
+              <a href="/Shop/Backend/admin.php">Home</a>
+            </li>
+            <li class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer active">
+              <a href="/Shop/index.php">User view</a>
             </li>
             <li class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
               <a href="/Shop/Backend/additem.php">Add items</a>
@@ -126,7 +129,7 @@ if ($_SESSION['usertype'] != 'admin') {
         <li>
           <form action="admin.php" method="POST">
           <button type="submit"
-            value="Logout" name="Logout"
+            value="logout" name="logout"
             id="logout"
             class="
               dropdown-item
@@ -148,5 +151,5 @@ if ($_SESSION['usertype'] != 'admin') {
       </ul>
     </div>
   </div>
-          </div>
+</div>
 </header>

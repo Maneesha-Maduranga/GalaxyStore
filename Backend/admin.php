@@ -48,18 +48,10 @@ if (isset($_POST['Remove'])) {
 
 ?>
 
-
-
-
-
-
-
-
-
   <!-- items are not in the database -->
   <?php if (count($item) == 0) : ?>
     
-    <div class="card w-96 bg-base-100 shadow-xl place-self-center">
+    <div class="w-96 bg-base-100 shadow-xl place-self-center">
       <figure class="px-10 pt-10">
         <img src="./img/Notfound.png" alt="Shoes" class="rounded-xl" />
       </figure>
@@ -76,7 +68,7 @@ if (isset($_POST['Remove'])) {
       <?php foreach ($item as $oneItem) : ?>
 
 
-        <div class="card w-64 p-3 bg-base-50 shadow-xl  sm:w-48px-2">
+        <div class="w-64 p-3 bg-base-50 shadow-xl  sm:w-48px-2">
           <figure><img src="./img/phone.jpg" alt="Shoes" /></figure>
           <div class="card-body">
             <h6><?php echo htmlspecialchars($oneItem['name']) ?></h6>
@@ -100,10 +92,5 @@ if (isset($_POST['Remove'])) {
       <?php endforeach; ?>
       </div>
     <?php endif; ?>
-
-
-
-
-
 
     <?php include '../Temp/Footer.php' ?>

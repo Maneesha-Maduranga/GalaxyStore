@@ -17,8 +17,9 @@ mysqli_free_result($result);
 <?php
 if (isset($_SESSION['usertype'])) {
   if (($_SESSION["usertype"] == "admin")) {
-    include "./Backend/Header.php";
+    include "/Shop/Backend/Header.php";
   }
+  include "/Shop/Backend/Header.php";
 }
 else {
     include './Temp/header.php';
