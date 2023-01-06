@@ -1,7 +1,6 @@
 <?php include './config/db.php' ?>
 
 <?php
-
 //To Load The Store Item 
 $sql = "SELECT id,name,price,quantity,discount FROM item";
 
