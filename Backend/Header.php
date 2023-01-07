@@ -3,12 +3,12 @@ session_start();
 
 //Check If User session set or Not
 if (!isset($_SESSION['username'])) {
-  header('Location: /Shop/login.php');
+  header('Location: ../login.php');
 }
 
 //Check The user is Admin or not
 if ($_SESSION['usertype'] != 'admin') {
-  header('Location: /Shop/login.php');
+  header('Location: ../login.php');
 }
 
 

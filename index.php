@@ -29,7 +29,7 @@ else {
 
 if (isset($_POST['Logout'])) {
   session_unset();
-  header("Location: /Shop/login.php");
+  echo "<script>window.location = './index.php'</script>";
   die();
 }
 
