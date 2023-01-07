@@ -36,23 +36,23 @@ if ($_SESSION['usertype'] != 'admin') {
     <h1 class="w-3/12">
         <a href="/Shop/index.php" class="flex gap-5">
           <img src="https://cdn-icons-png.flaticon.com/512/3594/3594083.png" alt="Logo" class="h-10 w-10 hover:text-green-500 duration-200">
-          <p class="text-4xl font-bold tracking-tight hover:text-green-500 duration-200">GalaxyStore </p>
+          <p class="text-4xl font-bold tracking-tight hover:text-teal-500 duration-200">GalaxyStore </p>
         </a>
     </h1>
 
     <!-- navigation -->
     <nav class="nav font-semibold text-lg">
         <ul class="flex items-center">
-            <li class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer active">
+            <li class="p-4 border-b-2 border-teal-500 border-opacity-0 hover:border-opacity-100 hover:text-teal-500 duration-200 cursor-pointer active">
               <a href="/Shop/Backend/admin.php">Home</a>
             </li>
-            <li class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer active">
+            <li class="p-4 border-b-2 border-teal-500 border-opacity-0 hover:border-opacity-100 hover:text-teal-500 duration-200 cursor-pointer active">
               <a href="/Shop/index.php">User view</a>
             </li>
-            <li class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
+            <li class="p-4 border-b-2 border-teal-500 border-opacity-0 hover:border-opacity-100 hover:text-teal-500 duration-200 cursor-pointer">
               <a href="/Shop/Backend/additem.php">Add items</a>
             </li>
-            <li class="p-4 border-b-2 border-green-500 border-opacity-0 hover:border-opacity-100 hover:text-green-500 duration-200 cursor-pointer">
+            <li class="p-4 border-b-2 border-teal-500 border-opacity-0 hover:border-opacity-100 hover:text-teal-500 duration-200 cursor-pointer">
               <a href="">View items</a>
             </li>
         </ul>
@@ -82,7 +82,7 @@ if ($_SESSION['usertype'] != 'admin') {
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-              <svg class="h-8 hover:text-green-500 duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <svg class="h-8 hover:text-teal-500 duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
       </button>
       <ul
         class="

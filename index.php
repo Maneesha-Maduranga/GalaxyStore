@@ -35,15 +35,15 @@ if (isset($_POST['Logout'])) {
 
 ?>
 
-<div class="grid md:px-8 py-2 md:grid-cols-5 gap-2">
+<div class="grid md:px-8 py-2 md:grid-cols-5 gap-10">
 
   <?php foreach ($item as $oneItem): ?>
 
     <form action="cart.php" method="POST">
 
-      <div class="card w-64 p-3 bg-base-50 shadow-xl  sm:w-48px-2">
+      <div class="w-64 p-3 bg-base-50 shadow-xl  sm:w-48px-2 hover:-translate-y-1 border rounded-lg">
 
-        <figure><img src="./img/phone.jpg" alt="Shoes" /></figure>
+        <figure><img src="/Shop/Backend/img/phone.jpg" alt="Shoes" /></figure>
         <div class="card-body">
           <h6>
             <?php echo htmlspecialchars($oneItem['name']) ?>
