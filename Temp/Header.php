@@ -130,7 +130,7 @@ if (isset($_SESSION["username"])) {
               text-gray-700
               hover:bg-gray-100
             "
-            href="#"
+            href="/Shop/profile.php"
             >Profile</a
           >
         </li>
