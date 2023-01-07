@@ -22,7 +22,7 @@ mysqli_free_result($result);
   //Logout Logic
   if(isset($_POST['logout'])){
     session_unset();
-    header('Location: /Shop/login.php');
+    echo "<script>window.location = '../index.php'</script>";
   }
 
 ?> 
@@ -40,7 +40,7 @@ if (isset($_POST['Remove'])) {
   $sql = "DELETE FROM item WHERE id=$id";
 
   if (mysqli_query($conn, $sql)) {
-    header('Location: ./admin.php');
+    echo "<script>window.location = './admin.php'</script>";
   } else {
     echo "Error";
   }
