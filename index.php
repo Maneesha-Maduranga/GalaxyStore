@@ -1,7 +1,6 @@
 <?php include './config/db.php' ?>
 
 <?php
-
 //To Load The Store Item 
 $sql = "SELECT id,name,price,quantity,discount FROM item";
 
@@ -13,23 +12,30 @@ mysqli_free_result($result);
 
 ?>
 
-<?php include './Temp/header.php' ?>
 
 <!-- Logout the User -->
+<?php
+if (isset($_SESSION['usertype'])) {
+  if (($_SESSION["usertype"] == "admin")) {
+    include "/Shop/Backend/Header.php";
+  }
+  include "/Shop/Backend/Header.php";
+}
+else {
+    include './Temp/header.php';
+}
+?>
 <?php
 
 if (isset($_POST['Logout'])) {
   session_unset();
-  header("Location: index.php");
+  header("Location: /Shop/login.php");
   die();
 }
-
 
 ?>
 
 <div class="grid md:px-8 py-2 md:grid-cols-5 gap-2">
-
-
 
   <?php foreach ($item as $oneItem): ?>
 
