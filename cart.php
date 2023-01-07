@@ -64,8 +64,11 @@ if (isset($_SESSION["username"])) {
 <?php if (count($cartItems) == 0) : ?>
 
     <div class="place-self-center	">
-        <div class="card w-96 bg-base-100 shadow-xl">
+        <div class="w-96 bg-base-100 shadow-2xl border rounded-md">
             <div class="card-body items-center text-center">
+                <img src="https://img.freepik.com/free-vector/no-data-concept-illustration_114360-616.jpg?w=740&t=st=1673106018~exp=1673106618~hmac=1b443761bd5c70813b68a3bfd7a2ff1b1f8ef207b33b216a8b83e0c962841ecd" 
+                    alt="emtpy image"
+                >
                 <h2 class="card-title">Your Cart Is Currently Empty</h2>
                 <div class="card-actions">
                     <a href="index.php" class="btn btn-info">Return To Shop</a>
@@ -77,12 +80,12 @@ if (isset($_SESSION["username"])) {
 
 <?php else : ?>
 
-    <div class="px-4 overflow-x-auto">
-        <table class="table w-full">
+    <div class="px-4 ">
+        <table class="w-full">
 
-            <thead>
+            <thead class="bg-teal-100 p-6 mb-3 h-16 rounded-xl">
                 <tr>
-                    <th>Product</th>
+                    <th >Product</th>
                     <th>Product Name</th>
                     <th>Quantity</th>
                     <th>Price</th>
@@ -98,12 +101,12 @@ if (isset($_SESSION["username"])) {
 
                     ?>
 
-                    <tr>
-                        <td><img src="./img/phone.jpg" class="w-20" alt=""></td>
-                        <td><?php echo $item['name']; ?></td>
-                        <td><?php echo $item['quantity']; ?></td>
-                        <td><?php echo $item['price']; ?></td>
-                        <td>
+                    <tr class="h-16 hover:bg-slate-50 border-b border-slate-200">
+                        <td class="text-center"><img src="./img/phone.jpg" class="w-20" alt=""></td>
+                        <td class="text-center"><?php echo $item['name']; ?></td>
+                        <td class="text-center"><?php echo $item['quantity']; ?></td>
+                        <td class="text-center"><?php echo $item['price']; ?></td>
+                        <td class="text-center">
                             <form action="cart.php" method="POST">
                                 <input type="hidden" name="itemId" value="<?php echo $item['id']; ?>">
                                 <input type="submit" value="Remove" class="btn btn-outline btn-error btn-xs" name="Delete">
@@ -122,7 +125,7 @@ if (isset($_SESSION["username"])) {
                 View Sub Total
             </div>
             <div class="collapse-content">
-                <p>Rs: <?php echo $subTotal; ?></p>
+                <p class="mb-3">Rs: <?php echo $subTotal; ?></p>
                 <button class="btn btn-success">Place The Order</button>
             </div>
         </div>
