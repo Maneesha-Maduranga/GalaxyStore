@@ -75,6 +75,9 @@
         </div>
         <div class="md:w-8/12 lg:w-5/12 lg:ml-20">
           <form  action="login.php"   method="post">
+                <div class="mb-5">
+                <h1 class="font-bold text-3xl text-gray-900 text-center">LOGIN</h1>
+                </div>
             <!-- Email input -->
             <div class="mb-6">
               <input type="email" name="email" value="<?php echo $email_msg;?>" class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" placeholder="Email address" required />

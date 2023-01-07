@@ -35,6 +35,18 @@ if (isset($_POST['Logout'])) {
 
 ?>
 
+<div class="w-full bg-teal-200 flex mb-10 items-center justify-between">
+  <div class="w-full h-full bg-white flex justify-end">
+  <div class="w-11/12 h-full flex flex-col items-center justify-center rounded-tr-3xl rounded-b-xl rounded-tl-xl bg-teal-200">
+  <p class="text-8xl mb-4">Save Big</p>
+  <p class="text-2xl text-center font-serif text-slate-600">Get the latest phones with <br> the biggest <span class="text-red-900">discounts!!</span></p>
+  </div>
+</div>
+  <div class="rounded-bl-full bg-white w-full h-full">
+  <img src="/Shop/images/front-cover.png">
+  </div>
+</div>
+
 <div class="grid md:px-8 py-2 md:grid-cols-5 gap-10">
 
   <?php foreach ($item as $oneItem): ?>
