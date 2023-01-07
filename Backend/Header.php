@@ -122,7 +122,7 @@ if ($_SESSION['usertype'] != 'admin') {
               text-gray-700
               hover:bg-gray-100
             "
-            href="#"
+            href="/Shop/profile.php"
             >profile</a
           >
         </li>
