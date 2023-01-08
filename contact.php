@@ -29,7 +29,6 @@
 
     </div>
     <div class="w-2/5 px-10 py-5 bg-base-50 shadow-xl sm:w-48px-2">
-               <form>
                   <div class="mb-6">
                      <input
                         type="text"
@@ -45,7 +44,9 @@
                         focus-visible:shadow-none
                         focus:border-primary
                         "
+                        id="name"
                         />
+                        <label for="empty" class="text-sm text-red-500 italic pl-3 hidden" id="nameLabel">Name can't be empty</label>
                   </div>
                   <div class="mb-6">
                      <input
@@ -62,7 +63,9 @@
                         focus-visible:shadow-none
                         focus:border-primary
                         "
+                        id="email"
                         />
+                        <label for="empty" class="text-sm text-red-500 italic pl-3 hidden" id="emailLabel">Email can't be empty</label>
                   </div>
                   <div class="mb-6">
                      <input
@@ -79,7 +82,9 @@
                         focus-visible:shadow-none
                         focus:border-primary
                         "
+                        id="phone"
                         />
+                        <label for="empty" class="text-sm text-red-500 italic pl-3 hidden" id="phoneLabel">Phone number can't be empty</label>
                   </div>
                   <div class="mb-6">
                      <textarea
@@ -97,11 +102,12 @@
                         focus-visible:shadow-none
                         focus:border-primary
                         "
+                        id="message"
                         ></textarea>
+                        <label for="empty" class="text-sm text-red-500 italic pl-3 hidden" id="messageLabel">Message can't be empty</label>
                   </div>
                   <div>
                      <button
-                        type="submit"
                         class="
                         w-full
                         text-white
@@ -112,11 +118,12 @@
                         transition
                         hover:bg-opacity-90
                         "
+                        id="sendMessage"
+                        onclick="send()"
                         >
                      Send Message
                      </button>
                   </div>
-               </form>
 
     </div>
 </div>
