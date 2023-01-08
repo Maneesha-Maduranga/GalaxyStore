@@ -31,7 +31,7 @@ function send() {
     }
     else {
         let subject = "Galaxy store user feedback!";
-        let body =  ${message.value} %0D%0A%0D%0A User, %0D%0A%0D%0A ${name.value}, %0D%0A%0D%0A ${phone.value}, %0D%0A%0D%0A ${email.value}. ;
+        let body =  `${message.value} %0D%0A%0D%0A User, %0D%0A%0D%0A ${name.value}, %0D%0A%0D%0A ${phone.value}, %0D%0A%0D%0A ${email.value}.` ;
         document.location.href = "mailto:pubg44030@gmail.com?subject="
         + encodeURIComponent(subject)
         + "&body=" + (body);
