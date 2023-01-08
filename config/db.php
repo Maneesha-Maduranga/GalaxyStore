@@ -7,4 +7,4 @@
         echo "Error ". mysqli_connect_error();
     }
 
-?>s
+?>
