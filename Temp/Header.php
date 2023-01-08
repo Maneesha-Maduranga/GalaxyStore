@@ -45,7 +45,7 @@ if (isset($_SESSION["username"])) {
               <a href="/Shop/index.php">Home</a>
             </li>
             <li class="p-4 border-b-2 border-teal-500 border-opacity-0 hover:border-opacity-100 hover:text-teal-500 duration-200 cursor-pointer">
-              <a href="">Orders</a>
+              <a href="/Shop/orders.php">Orders</a>
             </li>
             <li class="p-4 border-b-2 border-teal-500 border-opacity-0 hover:border-opacity-100 hover:text-teal-500 duration-200 cursor-pointer">
               <a href="/Shop/contact.php">Contact</a>

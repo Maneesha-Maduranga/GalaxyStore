@@ -53,7 +53,7 @@ if ($_SESSION['usertype'] != 'admin') {
               <a href="/Shop/Backend/additem.php">Add items</a>
             </li>
             <li class="p-4 border-b-2 border-teal-500 border-opacity-0 hover:border-opacity-100 hover:text-teal-500 duration-200 cursor-pointer">
-              <a href="">View Orderes</a>
+              <a href="/Shop/Backend/viewOrders.php">View Orderes</a>
             </li>
         </ul>
     </nav>

@@ -3,7 +3,6 @@
 <?php include './Temp/header.php' ?>
 
 <?php
-
 if (isset($_SESSION['username'])) {
     if (isset($_POST['id'])) {
         $item_id = htmlspecialchars($_POST['id']);
@@ -13,7 +12,7 @@ if (isset($_SESSION['username'])) {
         $quantity = $_POST['quantity'] == ""? 1 : $_POST["quantity"];
         $userid = $_SESSION["id"];
 
-        $addToCartSql = "INSERT INTO cart (item_id,name,price,quantity,discount,user_id) VALUES ('$item_id','$name','$price','$quantity','$discount','$userid')";
+        $addToCartSql = "INSERT INTO cart (item_id,name,price,quantity,discount,user_id,shipped) VALUES ('$item_id','$name','$price','$quantity','$discount','$userid','false')";
 
         if (mysqli_query($conn, $addToCartSql)) {
         } else {
@@ -41,6 +40,7 @@ if (isset($_POST['Delete'])) {
     }
 }
 
+
 if (isset($_SESSION["username"])) {
 
     $userid = $_SESSION["id"];
@@ -50,18 +50,49 @@ if (isset($_SESSION["username"])) {
 
     $result = mysqli_query($conn, $sql);
 
+    global $cartItems;
     $cartItems = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
     $_SESSION['length'] = count($cartItems) + 1;
 
     mysqli_free_result($result);
 }
+
+if (isset($_POST['submitOrders'])) {
+
+    $total = $_POST["subTotal"];
+    $order_id = $_SESSION["id"] . $total . strval(rand(5, 10));
+    $user_id = $_SESSION['id'];
+    foreach ($cartItems as $item) {
+        $name = $item['name'];
+        $quan = $item['quantity'];
+        $item_id = $item['item_id'];
+        $orderQuery = "INSERT INTO orders (order_id,user_id,item,quantity,price) VALUES ('$order_id','$user_id','$name','$quan','$total')";
+        // $updateCart = "UPDATE cart SET shipped = 'true' WHERE item_id = '$item_id'";
+        $updateCart = "DELETE FROM cart WHERE user_id = $user_id";
+        if (mysqli_query($conn, $orderQuery)) {
+            mysqli_query($conn, $updateCart);
+        } else {
+            "Error " . mysqli_error($conn);
+        }
+    }
+    echo "<script>window.location = '/Shop/orders.php'</script>";
+    die();
+}
 ?>
 
 
 
 
-<?php if (count($cartItems) == 0) : ?>
+<?php
+$items = false;
+foreach ($cartItems as $item) {
+    if ($item['shipped'] == 'false') {
+        $items = true;
+    }
+}
+if ( $items == false) : 
+?>
 
     <div class="place-self-center	">
         <div class="w-96 bg-base-100 shadow-2xl border rounded-md">
@@ -81,7 +112,7 @@ if (isset($_SESSION["username"])) {
 <?php else : ?>
 
     <div class="px-4 ">
-        <table class="w-full">
+        <table class="w-full shadow-md">
 
             <thead class="bg-teal-100 p-6 mb-3 h-16 rounded-xl">
                 <tr>
@@ -96,7 +127,7 @@ if (isset($_SESSION["username"])) {
                 <?php $subTotal = 0 ?>
                 <?php foreach ($cartItems as $item) : ?>
                     <?php
-
+                    if ($item['shipped'] == 'false') {
                     $subTotal = $subTotal + ($item['price'] - $item['discount']) * $item['quantity'];
 
                     ?>
@@ -114,26 +145,28 @@ if (isset($_SESSION["username"])) {
                         </td>
                     </tr>
 
-                <?php endforeach; ?>
+                <?php } endforeach; ?>
 
         </table>
 
     </div>
-    <div class="place-self-end">
-        <div tabindex="0" class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box w-64 place-self-end">
-            <div class="collapse-title text-xl font-medium">
-                View Sub Total
+    <div class="place-self-end mt-3 p-3">
+        <div class="border border-base-300 bg-base-100 rounded-box w-64 place-self-end flex flex-col justify-center p-3 shadow-xl">
+            <div class="collapse-title text-xl font-medium pl-3">
+                Sub Total
             </div>
-            <div class="collapse-content">
-                <p class="mb-3">Rs: <?php echo $subTotal; ?></p>
-                <button class="btn btn-success">Place The Order</button>
-            </div>
-        </div>
+            <form action="cart.php" method="POST">
+                <div class="">
+                    <p class="mb-3">Rs: <?php echo $subTotal; ?></p>
+                    <input class="hidden" value="<?php echo $subTotal; ?>" id="subTotal" name="subTotal">
+                    <button type="submit" class="btn btn-success" name="submitOrders" id="placeOrder" > Place The Order</button>
+                </div>
+            </form>
+                </div>
     </div>
 <?php endif; ?>
 
 </body>
-
 
 
 
