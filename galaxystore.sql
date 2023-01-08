@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2023 at 08:03 AM
+-- Generation Time: Jan 08, 2023 at 04:13 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -28,25 +28,15 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `cart` (
-  `name` varchar(20) NOT NULL,
-  `price` int(8) NOT NULL,
-  `quantity` int(3) NOT NULL,
-  `discount` int(5) NOT NULL,
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `price` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `discount` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `item_id` int(11) NOT NULL,
-  `id` int(11) NOT NULL
+  `shipped` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`name`, `price`, `quantity`, `discount`, `user_id`, `item_id`, `id`) VALUES
-('Apple Iphone x', 250000, 1, 2500, 0, 69, 13),
-('Apple Iphone se', 100000, 2, 5000, 6, 70, 14),
-('Apple Iphone x', 250000, 1, 2500, 8, 74, 17),
-('Samsung s10', 5555, 1, 55, 10, 84, 23),
-('Apple iPhone 14 Plus', 502000, 1, 5000, 7, 122, 40);
 
 -- --------------------------------------------------------
 
@@ -55,11 +45,11 @@ INSERT INTO `cart` (`name`, `price`, `quantity`, `discount`, `user_id`, `item_id
 --
 
 CREATE TABLE `item` (
-  `id` int(3) NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `price` int(30) NOT NULL,
-  `quantity` int(5) NOT NULL,
-  `discount` int(5) NOT NULL,
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `price` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `discount` int(11) NOT NULL,
   `url` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -68,12 +58,12 @@ CREATE TABLE `item` (
 --
 
 INSERT INTO `item` (`id`, `name`, `price`, `quantity`, `discount`, `url`) VALUES
-(123, 'Google Pixel 7 ', 210000, 10, 6000, 'https://lifemobile.lk/wp-content/uploads/2022/10/Google-Pixel-7.png'),
-(124, 'Apple iPhone 12 Mini', 180000, 7, 3500, 'https://lifemobile.lk/wp-content/uploads/2020/10/Apple-iPhone-12-Blue.jpg'),
-(125, 'Apple iPhone SE 2020', 155429, 4, 4200, 'https://lifemobile.lk/wp-content/uploads/2020/11/Apple-iPhone-SE-2020.png'),
-(126, 'Apple iPhone X 64GB', 199599, 10, 1200, 'https://lifemobile.lk/wp-content/uploads/2019/04/iphone20x.jpg'),
-(127, 'Huawei Y5 Lite', 19760, 7, 1999, 'https://lifemobile.lk/wp-content/uploads/2019/10/y5-lite-1.jpg'),
-(128, 'Nokia C01 Plus ', 25800, 3, 1200, 'https://lifemobile.lk/wp-content/uploads/2021/08/Nokia-C01-Plus-2GB-RAM-16GB.jpg');
+(5, 'Google Pixel 7 ', 210000, 10, 6000, 'https://lifemobile.lk/wp-content/uploads/2022/10/Google-Pixel-7.png'),
+(6, 'Apple iPhone 12 Mini', 180000, 7, 3500, 'https://lifemobile.lk/wp-content/uploads/2020/10/Apple-iPhone-12-Blue.jpg'),
+(7, 'Apple iPhone SE 2020', 155429, 4, 4200, 'https://lifemobile.lk/wp-content/uploads/2020/11/Apple-iPhone-SE-2020.png'),
+(8, 'Apple iPhone X 64GB', 199599, 10, 1200, 'https://lifemobile.lk/wp-content/uploads/2019/04/iphone20x.jpg'),
+(9, 'Huawei Y5 Lite', 19760, 7, 1999, 'https://lifemobile.lk/wp-content/uploads/2019/10/y5-lite-1.jpg'),
+(10, 'Nokia C01 Plus ', 25800, 3, 1200, 'https://lifemobile.lk/wp-content/uploads/2021/08/Nokia-C01-Plus-2GB-RAM-16GB.jpg');
 
 -- --------------------------------------------------------
 
@@ -83,9 +73,11 @@ INSERT INTO `item` (`id`, `name`, `price`, `quantity`, `discount`, `url`) VALUES
 
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
-  `userid` int(11) NOT NULL,
+  `order_id` varchar(50) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `item` varchar(100) NOT NULL,
   `quantity` int(11) NOT NULL,
-  `item_name` varchar(50) NOT NULL
+  `price` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -96,6 +88,7 @@ CREATE TABLE `orders` (
 
 CREATE TABLE `users` (
   `id` bigint(20) NOT NULL,
+  `user_id` bigint(20) NOT NULL,
   `fname` varchar(70) NOT NULL,
   `sname` varchar(70) NOT NULL,
   `email` varchar(70) NOT NULL,
@@ -107,15 +100,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `fname`, `sname`, `email`, `password`, `user_type`) VALUES
-(5, 'Maneesha', 'Maduranga', 'Maneesha@gmail.com', '123', 'admin'),
-(6, 'Test', 'One', 'Test@gmail.com', '123', 'user'),
-(8, 'chris', 'Bum', 'Cbum@gmail.com', 'cbum', 'user'),
-(9, 'Pathum ', 'Nissanka', 'Pathum@gmail.com', '123', 'user'),
-(10, 'kusal', 'Mendis', 'Kusal@gmail.com', '123', 'user'),
-(11, 'Dasun ', 'Shanka', 'Dasun@gmail.com', '123', 'user'),
-(12, 'Lucifer', 'Devon', 'luciferdevon@gmail.com', '123', 'user'),
-(13, 'Jay', 'cutler', 'jay@gmail.com', '123', 'user');
+INSERT INTO `users` (`id`, `user_id`, `fname`, `sname`, `email`, `password`, `user_type`) VALUES
+(2, 0, 'lucifer', 'devon', 'abctesting123@gmail.com', '123', 'user'),
+(3, 0, 'chamod', 'dananjaya', 'chamoddananjaya49@gmail.com', '12345', 'admin');
 
 --
 -- Indexes for dumped tables
@@ -137,7 +124,8 @@ ALTER TABLE `item`
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `order_id` (`order_id`);
 
 --
 -- Indexes for table `users`
@@ -153,25 +141,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
