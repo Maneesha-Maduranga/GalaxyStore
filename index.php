@@ -2,7 +2,7 @@
 
 <?php
 //To Load The Store Item 
-$sql = "SELECT id,name,price,quantity,discount FROM item";
+$sql = "SELECT id,name,price,quantity,discount,url FROM item";
 
 $result = mysqli_query($conn, $sql);
 
@@ -55,7 +55,7 @@ if (isset($_POST['Logout'])) {
 
       <div class="w-64 p-3 bg-base-50 shadow-xl  sm:w-48px-2 hover:-translate-y-1 border rounded-lg">
 
-        <figure><img src="/Shop/Backend/img/phone.jpg" alt="Shoes" /></figure>
+        <figure><img src=" <?php echo htmlspecialchars($oneItem['url']) ?>" alt="Shoes" /></figure>
         <div class="card-body">
           <h6>
             <?php echo htmlspecialchars($oneItem['name']) ?>

@@ -69,7 +69,7 @@ if (isset($_POST['Remove'])) {
 
 
         <div class="w-64 p-3 bg-base-50 shadow-xl sm:w-48px-2 hover:-translate-y-1 border rounded-lg">
-          <figure><img src="./img/phone.jpg" alt="Shoes" /></figure>
+          <figure><img src="<?php echo htmlspecialchars($oneItem['url']) ?>" alt="Shoes" /></figure>
           <div class="card-body">
             <h6><?php echo htmlspecialchars($oneItem['name']) ?></h6>
             <p class="text-sm ..."> Price : <?php echo htmlspecialchars($oneItem['price']) ?> <br>
