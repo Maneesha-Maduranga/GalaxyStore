@@ -1,4 +1,28 @@
-# GalaxyStore
+
+# Final Group Project - GalaxyStore
+Create an E-commerce website using PHP, connect it to a database
+
+## Appendix
+
+Products are stored in the database and users can sign up, log in, and add products to user cart and purchase it. Admin has the ability to add, modify, and remove products from the database
+
+
+## Group Members
+
+- CT/2018/012 - [ADCdananjaya](https://github.com/ADCdananjaya)
+- CT/2018/028 - [TharushikaK99](https://github.com/TharushikaK99)
+- CT/2018/036 - [Maneesha-Maduranga](https://github.com/Maneesha-Maduranga)
+- CT/2018/048 - [SLFireFlash](https://github.com/SLFireFlash)
+- CT/2018/060 - [DAHAM-SENAVIRATHNA](https://github.com/DAHAM-SENAVIRATHNA)
+
+
+
+## Demo
+
+Insert gif or link to demo
+
+
+
 # output
 
 ![Annotation 2023-01-08 110747](https://user-images.githubusercontent.com/101623802/211182341-170f80cc-9daf-45f0-9575-fc791935aabb.jpg)
