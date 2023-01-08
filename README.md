@@ -4,7 +4,7 @@ Create an E-commerce website using PHP, connect it to a database
 
 ## Appendix
 
-Products are stored in the database and users can sign up, log in, and purchase products. Admin has the ability to add, modify, and remove products from the database
+Products are stored in the database and users can sign up, log in, and add products to user cart and purchase that. Admin has the ability to add, modify, and remove products from the database
 
 
 ## Group Members
