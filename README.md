@@ -1,3 +1,16 @@
+
+# Final Group Project
+Create an E-commerce website using PHP, connect it to a database, and access the products there. Users can sign up, log in, and purchase things. Admin has the ability to add, modify, and remove products from the database.
+
+
+## Group Members
+
+- CT/2018/012
+- CT/2018/036
+- CT/2018/028
+- CT/2018/048
+- CT/2018/060
+
 # GalaxyStore
 # output
 
