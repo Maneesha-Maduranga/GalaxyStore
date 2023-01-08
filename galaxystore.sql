@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 08, 2023 at 07:47 AM
+-- Generation Time: Jan 08, 2023 at 08:03 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -110,12 +110,12 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `fname`, `sname`, `email`, `password`, `user_type`) VALUES
 (5, 'Maneesha', 'Maduranga', 'Maneesha@gmail.com', '123', 'admin'),
 (6, 'Test', 'One', 'Test@gmail.com', '123', 'user'),
-(7, 'Vijitth', 'Dinesh', 'Vijith@gmail.com', '456', 'user'),
 (8, 'chris', 'Bum', 'Cbum@gmail.com', 'cbum', 'user'),
 (9, 'Pathum ', 'Nissanka', 'Pathum@gmail.com', '123', 'user'),
 (10, 'kusal', 'Mendis', 'Kusal@gmail.com', '123', 'user'),
 (11, 'Dasun ', 'Shanka', 'Dasun@gmail.com', '123', 'user'),
-(12, 'Lucifer', 'Devon', 'luciferdevon@gmail.com', '123', 'user');
+(12, 'Lucifer', 'Devon', 'luciferdevon@gmail.com', '123', 'user'),
+(13, 'Jay', 'cutler', 'jay@gmail.com', '123', 'user');
 
 --
 -- Indexes for dumped tables
@@ -153,7 +153,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `item`
@@ -171,7 +171,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
