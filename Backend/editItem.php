@@ -23,10 +23,6 @@ if (isset($_POST['Update'])) {
     $values["discount"] = $item[0]['discount'];
     $values["url"] = $item[0]['url'];
 
-
-    //print_r($item);
-
-
 }
 
 if (isset($_POST["Edit"])) {

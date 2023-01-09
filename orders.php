@@ -31,7 +31,12 @@
         </div>
     </div>
 <?php else : ?>
-    <div class="w-full flex justify-center items-center ">
+    <div class="w-full flex flex-col justify-center items-center ">
+        <div class="w-11/12 ">
+            <p class="text-3xl font-serif text-grey-800 mb-5 ml-5">
+                Your Orders...
+            </p>
+        </div>
         <table class="w-11/12 shadow-md border rounded-xl">
 
             <thead class="bg-teal-100 p-6 mb-3 h-16 rounded-xl">
@@ -59,17 +64,22 @@
             ?>
             <tr class="border-b border-gray-300 hover:bg-gray-200 h-10">
             <td class="text-center"><?php echo $item1['order_id'] ?></td>
-                    <td class="text-center">
+                    <td class="flex justify-center items-center">
+                        <table>
             <?php foreach ($orderItems as $item2):
                 if ($order_id == $item2['order_id']) { ?>
-                    <span><?php echo $item2['item'] ?></span>
-                    <span class="ml-5"><?php echo $item2['quantity'] ?></span><br>
+                <tr>
+                    <td class="text-center "><span><?php echo $item2['item'] ?></span></td>
+                    <td class="text-center"><span class="ml-5"><?php echo $item2['quantity'] ?></span></td>
+                </tr>
                 <?php } endforeach; ?>
+                        </table>
                     </td>
             <td class="text-center"><?php echo $item1['price'] ?></td>
                 </tr>
         
-        <?php $itemIds = array(); endforeach; ?>
+        <?php endforeach;
+        $itemIds = array();?>
             </tbody>
         </table>
     </div>

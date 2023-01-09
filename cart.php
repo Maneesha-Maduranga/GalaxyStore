@@ -67,9 +67,11 @@ if (isset($_POST['submitOrders'])) {
         $name = $item['name'];
         $quan = $item['quantity'];
         $item_id = $item['item_id'];
-        $orderQuery = "INSERT INTO orders (order_id,user_id,item,quantity,price) VALUES ('$order_id','$user_id','$name','$quan','$total')";
-        // $updateCart = "UPDATE cart SET shipped = 'true' WHERE item_id = '$item_id'";
+        $prce = ($item['price'] * $item['quantity']) - $item['discount'];
+
+        $orderQuery = "INSERT INTO orders (order_id,user_id,item,quantity,price) VALUES ('$order_id','$user_id','$name','$quan','$prce')";
         $updateCart = "DELETE FROM cart WHERE user_id = $user_id";
+
         if (mysqli_query($conn, $orderQuery)) {
             mysqli_query($conn, $updateCart);
         } else {

@@ -1,9 +1,7 @@
 <?php
 
 include '../config/db.php';
-
 include '../Backend/Header.php';
-
 
 //Make Queary For Fething Data From Db
 $sql = "SELECT * FROM item";
@@ -68,7 +66,7 @@ if (isset($_POST['Remove'])) {
       <?php foreach ($item as $oneItem) : ?>
 
 
-        <div class="w-64 p-3 bg-base-50 shadow-xl sm:w-48px-2 hover:-translate-y-1 border rounded-lg">
+        <div class="w-64 p-3 bg-base-50 shadow-xl sm:w-48px-2 hover:shadow-2xl border rounded-lg">
           <figure><img src="<?php echo htmlspecialchars($oneItem['url']) ?>" alt="Shoes" /></figure>
           <div class="card-body">
             <h6><?php echo htmlspecialchars($oneItem['name']) ?></h6>

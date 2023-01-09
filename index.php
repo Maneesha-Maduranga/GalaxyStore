@@ -65,7 +65,7 @@ if (isset($_POST['Logout'])) {
             Item Discount : <?php echo htmlentities($oneItem['discount']) ?>
           </p>
           <input type="text" placeholder="Enter Quantity" name="quantity"
-            class="input input-bordered input-sm w-full max-w-xs" />
+            class="input input-bordered input-sm w-full max-w-xs rounded-md" />
           <input type="hidden" name="id" value="<?php echo $oneItem['id'] ?>">
           <input type="hidden" name="Name" value="<?php echo $oneItem['name'] ?>">
           <input type="hidden" name="Price" value="<?php echo $oneItem['price'] ?>">
